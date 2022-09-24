@@ -16,9 +16,12 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LeftBoxComponent } from './components/left-box/left-box.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { StepperComponent } from './components/stepper/stepper.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LeftBoxComponent],
+  declarations: [AppComponent, NavbarComponent, LeftBoxComponent, StepperComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -33,6 +36,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatIconModule,
     FormsModule,
     FlexLayoutModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
