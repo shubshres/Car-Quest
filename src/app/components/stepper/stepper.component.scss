@@ -1,8 +1,41 @@
 .mat-stepper-horizontal {
     margin-top: 8px;
-  }
+}
+::ng-deep .mat-step-header .mat-step-icon-selected {
+    background-color:  #F01716;
+ }
   
-  .mat-form-field {
+.mat-form-field {
     margin-top: 16px;
-  }
+    width: 25%;
+}
+
+.form-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row{
+    display: flex; 
+    flex-direction: row;
+}
+
+.next-btn{
+    background-color: #F01716;
+    width: 100px;
+    border-radius: 25px;
+    font-size: 15px;
+    color: white;
+    margin-top: 20px;
+}
+.back-btn{
+    width: 100px;
+    border-radius: 25px;
+    font-size: 15px;
+    color: #F01716; 
+    margin: 20px 20px 0px 0px;
+    border: #F01716 solid ;
+
+}
+
   

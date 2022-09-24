@@ -1,28 +1,108 @@
 <mat-stepper #stepper>
+    <!-- FIRST FORM GROUP -->
     <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Fill out your name</ng-template>
-            <mat-form-field appearance="fill">
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
-            </mat-form-field>
+            <ng-template matStepLabel>Personal Information</ng-template>
+            <div class="form-col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput placeholder="Paul Koomey" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput placeholder="76013" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput type="date" placeholder="08/11/2000" formControlName="firstCtrl" required>
+                </mat-form-field>
+                <div class="form-row">
+                    <mat-form-field appearance="outline" style="margin-right: 15px ;">
+                        <mat-label>Gender</mat-label>
+                        <mat-select required="">
+                            <mat-option value="m">Male</mat-option>
+                            <mat-option value="f">Female</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Marital Status</mat-label>
+                        <mat-select required="">
+                            <mat-option value="m">Single</mat-option>
+                            <mat-option value="f">Married</mat-option>
+                            <mat-option value="f">Divorce</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+            </div>
             <div>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button matStepperNext class="next-btn">Next</button>
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-        <form [formGroup]="secondFormGroup">
-            <mat-form-field appearance="fill">
-                <mat-label>Address</mat-label>
-                <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+
+    <!-- SECOND FORM GROUP -->
+    <mat-step [stepControl]="secondFormGroup" label="Vehicle Information">
+        <form class="form-col" [formGroup]="secondFormGroup">
+            <mat-form-field appearance="outline">
+                <mat-label>Car Price Range</mat-label>
+                <mat-select>
+                    <mat-option value="<$10,000">
+                        less than $10,000 </mat-option>
+                    <mat-option value="$10,000 - $20,000">$10,000 - $20,000</mat-option>
+                    <mat-option value="$20,001 - $30,000">$20,001 - $30,000</mat-option>
+                    <mat-option value="$30,001 - $45,000">$30,001 - $45,000</mat-option>
+                    <mat-option value="$45,001 - $60,000">$45,001 - $60,000</mat-option>
+                    <mat-option value="$60,001 - $80,000">$60,001 - $80,000</mat-option>
+                    <mat-option value="$80,001 - $100,000">$80,001 - $100,000</mat-option>
+                    <mat-option value=">$100,00"> more than $100,00</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Weekly Driving Range</mat-label>
+                <mat-select>
+                    <mat-option value="<50">
+                        less than 50 miles </mat-option>
+                    <mat-option value="50-100">50 - 100</mat-option>
+                    <mat-option value="100-250">100-250</mat-option>
+                    <mat-option value="250-1000">250-1000</mat-option>
+                    <mat-option value="1000+">1000+</mat-option>
+                </mat-select>
             </mat-form-field>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button class="back-btn" mat-button matStepperPrevious>Back</button>
+                <button class="next-btn" mat-button matStepperNext>Next</button>
             </div>
         </form>
     </mat-step>
+
+
+    <!-- THIRD FORM GROUP -->
+    <mat-step [stepControl]="secondFormGroup" label="Credit History">
+        <form class="form-col" [formGroup]="secondFormGroup">
+            <mat-form-field appearance="outline">
+                <mat-label>Credit Score</mat-label>
+                <mat-select>
+                    <mat-option value="1">800-850 (Exceptional) </mat-option>
+                    <mat-option value="2">740-799 (Very Good) </mat-option>
+                    <mat-option value="3">670-739 (Good) </mat-option>
+                    <mat-option value="4">580-669 (Fair)</mat-option>
+                    <mat-option value="5">300-579 (Poor)</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+
+                <mat-label>Current debt you owe</mat-label>
+                <input matInput placeholder="Paul Koomey" formControlName="firstCtrl" required>
+
+            </mat-form-field>
+            <div>
+                <button class="back-btn" mat-button matStepperPrevious>Back</button>
+                <button class="next-btn" mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>

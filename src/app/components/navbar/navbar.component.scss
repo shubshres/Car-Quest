@@ -6,19 +6,15 @@
 
     // Adding Shadow below nav bar
     @include mat.elevation(8);
-
-    background-color: rgba(176, 0, 0, 1);
-    backdrop-filter: saturate(180%) blur(20px);
-
+    background-color: #F01716;
     // Make Nav Bar stay on top of screen
     position: sticky;
     top: 0px;
     z-index: 100;
-
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-
+    // border-bottom-right-radius: 5px;
+    // border-bottom-left-radius: 5px;
     height: 55px;
+    margin-bottom: 60px;
 }
 
 
