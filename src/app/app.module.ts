@@ -19,6 +19,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { StepperComponent } from './components/stepper/stepper.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, LeftBoxComponent, StepperComponent],
@@ -37,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     FlexLayoutModule,
     MatStepperModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
