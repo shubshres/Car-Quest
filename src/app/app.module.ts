@@ -14,16 +14,21 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LeftBoxComponent } from './components/left-box/left-box.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StepperComponent } from './components/stepper/stepper.component';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-
+import { TotalCostExpansionCardComponent } from './components/total-cost-expansion-card/total-cost-expansion-card.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LeftBoxComponent, StepperComponent],
+  declarations: [
+    AppComponent, 
+    NavbarComponent, 
+    StepperComponent, 
+    TotalCostExpansionCardComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -40,7 +45,8 @@ import { MatSelectModule } from '@angular/material/select';
     FlexLayoutModule,
     MatStepperModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule, 
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

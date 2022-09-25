@@ -1,0 +1,13 @@
+<mat-accordion fxLayout="row" fxLayoutAlign="end bottom" class="expansion-panel-position">
+    <mat-expansion-panel class="expansion-panel" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{returnCost()}}
+            </mat-panel-title>
+            <mat-panel-description>
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <!-- ng for loop here -->
+    </mat-expansion-panel>
+</mat-accordion>
