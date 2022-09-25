@@ -1,5 +1,32 @@
 # CarQuest
 
+## Inspiration
+
+Signing up for car insurance can be a scary process, especially as a first time car buyer. We wanted to make the process as fun and informative as possible. 
+
+## What it does
+
+Our application takes in information needed by State Farm in order to generate a quote for the price of car insurance, and informs the user on how each piece of information impacts the cost, and why it is necessary. 
+
+## How we built it
+
+We utilized Angular to build the front end of the application, and Figma for prototyping and design. 
+
+## Challenges we ran into
+
+We ran into issues trying to add animations into our project.
+
+## Accomplishments that we're proud of
+
+We are proud of everything we were able to accomplish in 24 hours
+
+## What we learned
+
+Some of our team members learned how to use Angular for the first time
+
+We also learned how to use stepper with Angular's Material UI
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
 
 ## Development server
