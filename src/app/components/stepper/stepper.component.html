@@ -6,29 +6,29 @@
             <div class="form-col">
                 <mat-form-field appearance="outline">
                     <mat-label>Full Name</mat-label>
-                    <input matInput placeholder="ex: Paul Koomey" formControlName="firstCtrl" required>
+                    <input matInput placeholder="ex: Paul Koomey" formControlName="Name" required>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Zip Code</mat-label>
-                    <input matInput placeholder="ex: 76013" formControlName="firstCtrl" required>
+                    <input matInput placeholder="ex: 76013" formControlName="ZipCode" required>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label>Date Of Birth</mat-label>
-                    <input matInput type="date" placeholder="ex: 08/11/2000" formControlName="firstCtrl" required>
+                    <mat-label>Age</mat-label>
+                    <input matInput placeholder="ex: 21" formControlName="Age" required>
                 </mat-form-field>
                 <div class="form-row">
                     <mat-form-field appearance="outline" style="margin-right: 15px ;">
                         <mat-label>Gender</mat-label>
-                        <mat-select required="">
+                        <mat-select formControlName="Gender" required="">
                             <mat-option value="m">Male</mat-option>
                             <mat-option value="f">Female</mat-option>
                         </mat-select>
                     </mat-form-field>
                     <mat-form-field appearance="outline">
                         <mat-label>Marital Status</mat-label>
-                        <mat-select required="">
-                            <mat-option value="m">Single</mat-option>
-                            <mat-option value="f">Married</mat-option>
+                        <mat-select formControlName="MaritalStatus" required="">
+                            <mat-option value="s">Single</mat-option>
+                            <mat-option value="m">Married</mat-option>
                             <mat-option value="d">Divorce</mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -36,7 +36,7 @@
 
             </div>
             <div>
-                <button mat-button matStepperNext class="next-btn">Next</button>
+                <button mat-button matStepperNext class="next-btn" (click)="stepOne()">Next</button>
             </div>
         </form>
     </mat-step>
@@ -46,7 +46,7 @@
         <form class="form-col" [formGroup]="secondFormGroup">
             <mat-form-field appearance="outline">
                 <mat-label>Credit Score</mat-label>
-                <mat-select >
+                <mat-select formControlName="CreditScore">
                     <mat-option value="1">800-850 (Exceptional) </mat-option>
                     <mat-option value="2">740-799 (Very Good) </mat-option>
                     <mat-option value="3">670-739 (Good) </mat-option>
@@ -56,23 +56,22 @@
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Current Debt You Owe</mat-label>
-                <input matInput  placeholder="3000" formControlName="firstCtrl" required>
+                <input matInput placeholder="3000" formControlName="DebtOwed" required>
             </mat-form-field>
             <div>
                 <button class="back-btn" mat-button matStepperPrevious>Back</button>
-                <button class="next-btn" mat-button matStepperNext>Next</button>
+                <button class="next-btn" mat-button matStepperNext (click)="stepTwo()">Next</button>
             </div>
         </form>
     </mat-step>
     
     <!-- THIRD FORM GROUP -->
     <mat-step [stepControl]="thirdFormGroup" label="Vehicle Information">
-        <form class="form-col" [formGroup]="secondFormGroup">
+        <form class="form-col" [formGroup]="thirdFormGroup">
             <mat-form-field appearance="outline">
                 <mat-label>Car Price Range</mat-label>
-                <mat-select >
-                    <mat-option value="<$10,000">
-                        less than $10,000 </mat-option>
+                <mat-select formControlName="VehiclePrice">
+                    <mat-option value="<$10,000">less than $10,000 </mat-option>
                     <mat-option value="$10,000 - $20,000">$10,000 - $19,999</mat-option>
                     <mat-option value="$20,001 - $30,000">$20,000 - $29,999</mat-option>
                     <mat-option value="$30,001 - $45,000">$30,000 - $44,999</mat-option>
@@ -84,7 +83,7 @@
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Weekly Driving Range</mat-label>
-                <mat-select >
+                <mat-select formControlName="WeeklyDrivingRange">
                     <mat-option value="<50">less than 50 miles </mat-option>
                     <mat-option value="50-100">50 - 100</mat-option>
                     <mat-option value="100-250">100 - 250</mat-option>
@@ -94,7 +93,7 @@
             </mat-form-field>
             <div>
                 <button class="back-btn" mat-button matStepperPrevious>Back</button>
-                <button class="next-btn" mat-button matStepperNext>Next</button>
+                <button class="next-btn" mat-button matStepperNext (click)="stepThree()">Next</button>
             </div>
         </form>
     </mat-step>
@@ -102,7 +101,7 @@
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
-
+        <button mat-button (click)="finish()">finish</button>
         <div>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button (click)="stepper.reset()">Reset</button>
